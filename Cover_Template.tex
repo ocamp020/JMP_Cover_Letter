@@ -1,0 +1,154 @@
+\documentclass[11pt,english]{article}
+\usepackage[authoryear]{natbib} 
+\usepackage[T1]{fontenc}
+
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{appendix}
+\usepackage{array}
+\usepackage{babel}
+\usepackage{caption}
+\usepackage{ctable}
+\usepackage{enumerate}
+\usepackage{enumitem}  
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{multirow} 
+\usepackage{pdflscape} 
+\usepackage{placeins}
+\usepackage[document]{ragged2e}
+\usepackage{rotfloat}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{newtxmath,newtxtext}
+\usepackage{parskip}
+\usepackage{datatool}
+\usepackage{hyperref}
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\captionsetup[figure]{labelfont=sc}  
+\captionsetup[table]{labelfont=sc} 
+
+\setcitestyle{round}
+
+\hypersetup{
+colorlinks,
+linkcolor=blue,
+urlcolor=black, 
+citecolor=blue % custom color
+}
+
+\addto\extrasenglish{%
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\equationautorefname}{Equation}
+\renewcommand{\subsectionautorefname}{Section}
+}
+
+\geometry{verbose,tmargin=2.5cm,bmargin=1cm,lmargin=2cm,rmargin=2cm}
+
+\bibliographystyle{plainnat} %plainnat
+
+\renewcommand{\abstractname}{}
+
+\setstretch{1.1}
+
+\providecommand{\tabularnewline}{\\}
+
+\setlength{\textfloatsep}{5pt}
+
+\pagestyle{empty}% Change page style to fancy
+\fancyhf{}% Clear header/footer
+\fancyhead[L]{ \textcolor{red!45!black}{\LARGE U\Large NIVERSITY OF \LARGE M\Large INNESOTA} \vspace{0.1cm}}
+%\fancyfoot[C]{Footer}% \fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}% Default \headrulewidth is 0.4pt
+%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+\setlength{\headsep}{10pt}
+%\lhead{\includegraphics[width=7cm,height=.62cm]{logo_min}}
+
+\makeatletter
+% Blank/missing fields commands
+% \skipblank adds \\ to filled field; * version adds \space instead of newline
+\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+% \checkblank replaces blank fields with ***
+\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{{\color{white}3456789}}{#1}}
+\pagenumbering{gobble}
+\makeatother
+
+\begin{document}
+    
+\DTLloaddb{addresses}{addresses_1.csv}
+\DTLforeach*{addresses}{%
+    \institution=Institution,
+    \dept=Department,
+    \position=Position}   
+    %\addressi=Address1,
+    %\addressii=Address2,
+    %\addressiii=Address3,
+    %\city=City,
+    %\state=State,
+    %\zip=Zip,
+    %\country=Country}
+    {%
+    
+    \thispagestyle{fancy}
+    \begin{changemargin}{-0.0em}{-0.0em}
+    \begin{tabular*}{17.7cm}{@{\extracolsep{\fill}}lll}
+
+    \footnotesize \emph{Twin Cities Campus} & \footnotesize \emph{Department of Economics} &  \footnotesize \textbf{\emph{Your Name}}\tabularnewline [-.4em]
+     & \footnotesize \emph{College of Liberal Arts} & \footnotesize \emph{4-101 Hanson Hall}\tabularnewline [-.4em] 
+     &  & \footnotesize \emph{1925 Fourth Street South}\tabularnewline [-.4em]
+     &  & \footnotesize \emph{Minneapolis, MN 55455}\tabularnewline [-.4em]
+     &  & \tabularnewline [-.4em]
+     &  & \footnotesize \emph{YourEmail@myu.edu}\tabularnewline [-.4em]
+     &  & \footnotesize \emph{XXX-XXX-XXXX}
+    \end{tabular*}
+    \end{changemargin}    
+    
+
+\justify
+\today
+
+\justify
+\skipblank{\institution}
+\skipblank{\dept}
+%\skipblank{\addressi}
+%\skipblank{\addressii}
+%\skipblank{\addressiii}
+%\skipblank{\city \ \state \ \zip}
+%\skipblank{\country}
+\vspace{0.5cm}
+\justify   
+Dear Members of the Recruiting Committee:
+
+\justify
+I am extremely interested in joining your department in the advertised position of \position. I believe that \institution   \thinspace offers an exciting environment, and I would feel privileged to be part of it. 
+
+	\vspace{3cm}
+	\hspace{13.6cm}
+	 Sincerely,
+		\vspace{-4mm}
+	\begin{figure}[H]
+	\hspace{13.5cm}
+		%\includegraphics[width=5cm,height=2cm]{Signature_File.png}
+	\end{figure}
+	\vspace{-9mm}
+\hspace{13.6cm}  Your Full Name
+%\end{addmargin}
+
+\clearpage
+}
+\end{document}
+
+
+
