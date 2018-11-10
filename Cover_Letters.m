@@ -58,6 +58,6 @@ for i=1:N
     movefile(PDF_File,PDF_Title)
     pause(0.5)
     
-    disp(['Cover Letter for ',Institution,' completed'])
+    disp(['Cover Letter for ',Institution{1},' completed'])
 end 
 
