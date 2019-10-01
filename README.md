@@ -6,11 +6,9 @@ The objective is to take a cover letter template (Cover_Template.tex) and genera
 The list of cover letters is specified in "Job_Postings.csv". The CSV file has three columns: Name of institution, name of department, name of position. Each row describes the job posting corresponding to an individual cover letter.
   Important: Make sure there are no spaces before or after the names.
 
-"Cover_Letters.m" reads "Job_Postings.csv" and produces individual pdf files for each row (job application), names of pdf files are adjusted if there are several applications to the same institution.  
-
 Optional: 
   1) Add signature to your cover letter. You can dispense of this by commenting line 144 in "Cover_Template.tex"
-  2) Save cover letters in separate folders containing a tex file for reproduction along with the pdf. This is useful if further editing (or tailoring) of the cover letter is required. To use this swith the "Separate_Folder" flag in "Cover_Letters.m" to "true" and add the folder name as a fourth entry in the "Job_Postings.csv' file. Make sure the folder name starts with a letter and has no spaces. 
+  2) Save cover letters in separate folders. This is useful if further editing (or tailoring) of the cover letter is required. To use this swith the "Separate_Folder" flag in "Cover_Letters.m" to "true" and add the folder name as a fourth entry in "Job_Postings.csv'. Make sure the folder name starts with a letter and has no spaces. 
 
 The program "Cover_Letters.m" runs in Matlab. It takes two inputs:
 
