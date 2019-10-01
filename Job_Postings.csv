@@ -1,5 +1,7 @@
-Institution,Department,Position
-University of Minnesota,Department of Economics,Assistant Professor
-Iowa State University ,Department of Aggricultural Stuff,Postdoctoral Fellow
-Federal Reserve Bank of San Francisco,Research Department,Economist
-Federal Reserve Bank of San Francisco,Policy Department,Economist
+Institution,Department,Position,Folder_Name
+University of Minnesota,Department of Economics,Assistant Professor,R001
+Iowa State University ,Department of Aggricultural Stuff,Postdoctoral Fellow,PD001
+Federal Reserve Bank of San Francisco,Research Department,Economist,R002
+Federal Reserve Bank of San Francisco,Policy Department,Economist,P001
+Williams College,Policy Department,Assistant Professor,T001
+University of Oslo,Department of Economics,Assistant Professor,E001
