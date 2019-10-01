@@ -8,7 +8,7 @@ The list of cover letters is specified in "Job_Postings.csv". The CSV file has t
 
 Optional: 
   1) Add signature to your cover letter. You can dispense of this by commenting line 144 in "Cover_Template.tex"
-  2) Save cover letters in separate folders. This is useful if further editing (or tailoring) of the cover letter is required. To use this swith the "Separate_Folder" flag in "Cover_Letters.m" to "true" and add the folder name as a fourth entry in "Job_Postings.csv'. Make sure the folder name starts with a letter and has no spaces. 
+  2) Save cover letters in separate folders. This is useful if further editing (or tailoring) of the cover letter is required. To use this set the "Separate_Folder" flag in "Cover_Letters.m" to "true" and add the folder name as a fourth entry in "Job_Postings.csv'. Make sure the folder name starts with a letter and has no spaces. 
 
 The program "Cover_Letters.m" runs in Matlab. It takes two inputs:
 
